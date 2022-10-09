@@ -1,7 +1,7 @@
 package com.usa.mintic.reto3.service;
 
-import com.usa.mintic.reto3.model.Category;
-import com.usa.mintic.reto3.repository.CategoryRepository;
+import com.example.demoo.model.Category;
+import com.example.demoo.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

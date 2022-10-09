@@ -1,7 +1,7 @@
 package com.usa.mintic.reto3.service;
 
-import com.usa.mintic.reto3.model.Message;
-import com.usa.mintic.reto3.repository.MessageRepository;
+import com.example.demoo.model.Message;
+import com.example.demoo.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

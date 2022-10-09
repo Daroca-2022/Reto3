@@ -12,7 +12,7 @@ public class Machine implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String brand;
-    private Integer yearMachine;
+    private Integer year;
     @ManyToOne
     @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("machines")
@@ -58,12 +58,12 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-    public Integer getYearMachine() {
-        return yearMachine;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setYearMachine(Integer year) {
-        this.yearMachine = year;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public String getDescription() {
