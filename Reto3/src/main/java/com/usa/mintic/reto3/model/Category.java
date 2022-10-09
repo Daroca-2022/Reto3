@@ -13,9 +13,9 @@ public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "name",nullable = true, length = 45)
+   // @Column(name = "name",nullable = true, length = 45)
     private String name;
-    @Column(name = "description", nullable = true, length = 250)
+   // @Column(name = "description", nullable = true, length = 250)
     private String description;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
