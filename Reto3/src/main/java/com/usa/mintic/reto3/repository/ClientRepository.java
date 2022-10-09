@@ -1,8 +1,9 @@
 package com.usa.mintic.reto3.repository;
 
 
-import com.example.demoo.model.Client;
-import com.example.demoo.repository.crudRepository.ClientCrudRepository;
+
+import com.usa.mintic.reto3.model.Client;
+import com.usa.mintic.reto3.repository.crudRepository.ClientCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

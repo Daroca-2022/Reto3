@@ -1,7 +1,7 @@
 package com.usa.mintic.reto3.controller;
 
-import com.example.demoo.model.Category;
-import com.example.demoo.service.CategoryService;
+import com.usa.mintic.reto3.model.Category;
+import com.usa.mintic.reto3.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

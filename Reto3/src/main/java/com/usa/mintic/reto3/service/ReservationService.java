@@ -1,7 +1,8 @@
 package com.usa.mintic.reto3.service;
 
-import com.example.demoo.model.Reservation;
-import com.example.demoo.repository.ReservationRepository;
+
+import com.usa.mintic.reto3.model.Reservation;
+import com.usa.mintic.reto3.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
