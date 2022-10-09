@@ -1,8 +1,8 @@
 package com.usa.mintic.reto3.repository;
 
 
-import com.example.demoo.model.Message;
-import com.example.demoo.repository.crudRepository.MessageCrudRepository;
+import com.usa.mintic.reto3.model.Message;
+import com.usa.mintic.reto3.repository.crudRepository.MessageCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

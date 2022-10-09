@@ -1,20 +1,14 @@
 package com.usa.mintic.reto3.repository;
 
-<<<<<<< HEAD
 import com.usa.mintic.reto3.model.Machine;
 import com.usa.mintic.reto3.repository.crudRepository.MachineCrudRepository;
-=======
-
-import com.example.demoo.model.Machine;
-import com.example.demoo.repository.crudRepository.MachineCrudRepository;
->>>>>>> nicolas
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-<<<<<<< HEAD
-@Repository
+
+/*
 public class MachineRepository {
     //liga el repositorio con el servicio y instancia a la clase Machine
     @Autowired
@@ -39,8 +33,7 @@ public class MachineRepository {
     public void delete (Machine m){
         machineCrudRepository.delete(m);
     }
-
-=======
+*/
 
 @Repository
 public class MachineRepository {
@@ -63,5 +56,4 @@ public class MachineRepository {
     public void delete(Machine m){
          machineCrudRepository.delete(m);
     }
->>>>>>> nicolas
 }

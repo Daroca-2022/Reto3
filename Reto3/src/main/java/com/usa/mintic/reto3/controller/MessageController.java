@@ -1,7 +1,7 @@
 package com.usa.mintic.reto3.controller;
 
-import com.example.demoo.model.Message;
-import com.example.demoo.service.MessageService;
+import com.usa.mintic.reto3.model.Message;
+import com.usa.mintic.reto3.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

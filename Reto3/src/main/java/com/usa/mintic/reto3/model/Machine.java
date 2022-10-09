@@ -6,26 +6,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-<<<<<<< HEAD
-@Table(name = "machine")
-=======
 @Table(name="machine")
->>>>>>> nicolas
 public class Machine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String brand;
-<<<<<<< HEAD
-    private String name;
     private Integer yearMachine;
-
-    @ManyToOne
-    @JoinColumn(name = "category")
-    @JsonIgnoreProperties("machine")
-    private Category category;
-=======
-    private Integer year;
     @ManyToOne
     @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("machines")
@@ -46,23 +33,13 @@ public class Machine implements Serializable {
     public void setCategory(Category category) {
         this.category = category;
     }
->>>>>>> nicolas
 
     public Integer getId() {
         return id;
     }
 
-<<<<<<< HEAD
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-=======
     public void setId(Integer id) {
         this.id = id;
->>>>>>> nicolas
     }
 
     public String getName() {
@@ -73,29 +50,6 @@ public class Machine implements Serializable {
         this.name = name;
     }
 
-<<<<<<< HEAD
-    public Integer getYearMachine() {
-        return yearMachine;
-    }
-
-    public void setYearMachine(Integer yearMachine) {
-        this.yearMachine = yearMachine;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-}
-
-=======
     public String getBrand() {
         return brand;
     }
@@ -104,12 +58,12 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-    public Integer getYear() {
-        return year;
+    public Integer getYearMachine() {
+        return yearMachine;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setYearMachine(Integer year) {
+        this.yearMachine = year;
     }
 
     public String getDescription() {
@@ -120,4 +74,3 @@ public class Machine implements Serializable {
         this.description = description;
     }
 }
->>>>>>> nicolas
