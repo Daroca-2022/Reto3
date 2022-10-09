@@ -1,7 +1,8 @@
 package com.usa.mintic.reto3.repository;
 
-import com.example.demoo.model.Reservation;
-import com.example.demoo.repository.crudRepository.ReservationCrudRepository;
+
+import com.usa.mintic.reto3.model.Reservation;
+import com.usa.mintic.reto3.repository.crudRepository.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,8 @@
 package com.usa.mintic.reto3.repository;
 
-import com.example.demoo.model.Category;
-import com.example.demoo.repository.crudRepository.CategoryCrudRepository;
+
+import com.usa.mintic.reto3.model.Category;
+import com.usa.mintic.reto3.repository.crudRepository.CategoryCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

@@ -1,12 +1,8 @@
 package com.usa.mintic.reto3.service;
 
-<<<<<<< HEAD
+
 import com.usa.mintic.reto3.model.Machine;
 import com.usa.mintic.reto3.repository.MachineRepository;
-=======
-import com.example.demoo.model.Machine;
-import com.example.demoo.repository.MachineRepository;
->>>>>>> nicolas
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +11,7 @@ import java.util.Optional;
 
 @Service
 public class MachineService {
-<<<<<<< HEAD
-=======
 
->>>>>>> nicolas
     @Autowired
     private MachineRepository machineRepository;
 
@@ -26,20 +19,6 @@ public class MachineService {
         return machineRepository.getAll();
     }
 
-<<<<<<< HEAD
-    public Optional<Machine> getById(int id){
-        return machineRepository.getById(id);
-    }
-
-    public Machine save(Machine m){
-       return machineRepository.save(m);
-    }
-
-    public void delete (Machine m){
-        machineRepository.delete(m);
-    }
-
-=======
     public Optional<Machine> getMachine(int id){
         return machineRepository.getMachine(id);
     }
@@ -93,5 +72,4 @@ public class MachineService {
         }
         return flag;
     }
->>>>>>> nicolas
 }

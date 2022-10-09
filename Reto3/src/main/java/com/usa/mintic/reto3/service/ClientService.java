@@ -1,7 +1,8 @@
 package com.usa.mintic.reto3.service;
 
-import com.example.demoo.model.Client;
-import com.example.demoo.repository.ClientRepository;
+
+import com.usa.mintic.reto3.model.Client;
+import com.usa.mintic.reto3.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,8 @@
 package com.usa.mintic.reto3.controller;
 
-import com.example.demoo.model.Reservation;
-import com.example.demoo.service.ReservationService;
+;
+import com.usa.mintic.reto3.model.Reservation;
+import com.usa.mintic.reto3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
