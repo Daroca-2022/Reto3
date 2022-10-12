@@ -1,9 +1,12 @@
 package com.usa.mintic.reto3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.engine.internal.Cascade;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "machine")
@@ -11,34 +14,23 @@ public class Machine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String brand;
     private String name;
-    private Integer yearMachine;
-
+    private String brand;
+    @Column(name="years")
+    private Integer year;
+    private String description;
     @ManyToOne
     @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("machines")
     private Category category;
-   // private String name;
 
-    private String description;
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
+    @JsonIgnoreProperties({"machine", "client"})
+    private List<Message> messages;
 
-
-    @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("machines")
-
-    //Messages Reservation
-
-
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
+    @JsonIgnoreProperties({"machine", "messages"})
+        private List<Reservation> reservations;
 
     public Integer getId() {
         return id;
@@ -64,13 +56,13 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-   // public Integer getYear() {
-   //     return year;
-    //}
+    public Integer getYear() {
+        return year;
+    }
 
-   // public void setYear(Integer year) {
-    //    this.year = year;
-   // }
+    public void setYear(Integer year) {
+        this.year = year;
+    }
 
     public String getDescription() {
         return description;
@@ -78,5 +70,29 @@ public class Machine implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }

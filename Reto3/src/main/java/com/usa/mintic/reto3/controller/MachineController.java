@@ -4,6 +4,7 @@ package com.usa.mintic.reto3.controller;
 import com.usa.mintic.reto3.model.Machine;
 import com.usa.mintic.reto3.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +22,10 @@ public class MachineController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Machine save(@RequestBody Machine p){
         return machineService.save(p);
     }
 
 }
+

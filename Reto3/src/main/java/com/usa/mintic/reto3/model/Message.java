@@ -1,6 +1,8 @@
 package com.usa.mintic.reto3.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -12,12 +14,22 @@ public class Message implements Serializable {
     private Integer idMessage;
     private String messageText;
 
+    @ManyToOne
+    @JoinColumn(name="machineId")
+    @JsonIgnoreProperties({"messages","reservations"})
+    private Machine machine;
+
+    @ManyToOne
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties({"messages","reservations"})
+    private Client client;
+
     public Integer getIdMessage() {
         return idMessage;
     }
 
-    public void setIdMessage(Integer id) {
-        this.idMessage = id;
+    public void setIdMessage(Integer idMessage) {
+        this.idMessage = idMessage;
     }
 
     public String getMessageText() {
@@ -27,7 +39,20 @@ public class Message implements Serializable {
     public void setMessageText(String messageText) {
         this.messageText = messageText;
     }
-//Client, machine
 
+    public Machine getMachine() {
+        return machine;
+    }
 
+    public void setMachine(Machine machine) {
+        this.machine = machine;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 }

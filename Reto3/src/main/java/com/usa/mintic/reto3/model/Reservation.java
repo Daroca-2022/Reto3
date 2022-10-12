@@ -1,5 +1,7 @@
 package com.usa.mintic.reto3.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -12,13 +14,27 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
+    private String status = "created";
+    @ManyToOne
+    @JoinColumn(name = "machineId")
+    @JsonIgnoreProperties("reservations")
+    private Machine machine;
+
+    @ManyToOne
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties({"reservations","messages"})
+    private Client client;
+
+    @OneToOne(cascade = {CascadeType.REMOVE},mappedBy = "reservation" )
+    @JsonIgnoreProperties("reservation")
+    private Score score;
 
     public Integer getIdReservation() {
         return idReservation;
     }
 
-    public void setIdReservation(Integer id) {
-        this.idReservation = id;
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
 
     public Date getStartDate() {
@@ -37,7 +53,35 @@ public class Reservation implements Serializable {
         this.devolutionDate = devolutionDate;
     }
 
-//client machine
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
+    public Machine getMachine() {
+        return machine;
+    }
+
+    public void setMachine(Machine machine) {
+        this.machine = machine;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Score getScore() {
+        return score;
+    }
+
+    public void setScore(Score score) {
+        this.score = score;
+    }
 }
