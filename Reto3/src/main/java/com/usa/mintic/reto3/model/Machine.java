@@ -1,7 +1,7 @@
 package com.usa.mintic.reto3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.engine.internal.Cascade;
+
 
 
 import javax.persistence.*;
@@ -31,6 +31,7 @@ public class Machine implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
     @JsonIgnoreProperties({"machine", "messages"})
         private List<Reservation> reservations;
+
 
     public Integer getId() {
         return id;
