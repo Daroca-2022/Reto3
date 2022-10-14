@@ -16,11 +16,11 @@ public class MachineRepository {
     @Autowired
     private MachineCrudRepository machineCrudRepository;
 
-     public List<Machine> getAll(){
+    public List<Machine> getAll(){
          return (List<Machine>) machineCrudRepository.findAll();
      }
 
-     public Optional<Machine> getMachine(int id){
+    public Optional<Machine> getMachine(int id){
          return machineCrudRepository.findById(id);
     }
 

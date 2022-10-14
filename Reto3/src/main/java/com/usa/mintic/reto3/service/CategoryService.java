@@ -6,8 +6,11 @@ import com.usa.mintic.reto3.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 public class CategoryService {
@@ -19,7 +22,7 @@ public class CategoryService {
         return categoryRepository.getAll();
     }
 
-    public Optional<Category> getMachine(int id){
+    public Optional<Category> getCategory(int id){
         return categoryRepository.getCategory(id);
     }
 
@@ -41,12 +44,22 @@ public class CategoryService {
         if (c.getId()!=null){
             Optional<Category> m = categoryRepository.getCategory(c.getId());
             if(m.isPresent()){
-                if (c.getName()!= null){
-                    m.get().setName(c.getName());
+                for (Field f : c.getClass().getDeclaredFields()) {
+                    f.setAccessible(true);
+                    Object value;
+                    try {
+                        value = f.get(c);
+                        if (value != null) {
+                            System.out.println("entro");
+                            f.set(m.get(), value);
+                        }
+                    } catch (IllegalArgumentException ex) {
+                        Logger.getLogger(CategoryService.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (IllegalAccessException ex) {
+                        Logger.getLogger(CategoryService.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
-                if (c.getDescription()!=null){
-                    m.get().setDescription(c.getDescription());
-                }
+
                 categoryRepository.save(m.get());
                 return m.get();
             }else{
@@ -66,4 +79,6 @@ public class CategoryService {
         }
         return flag;
     }
+
+
 }

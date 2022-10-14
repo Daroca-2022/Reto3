@@ -16,11 +16,10 @@ public class ClientRepository {
     @Autowired
     private ClientCrudRepository clientCrudRepository;
 
-     public List<Client> getAll(){
+    public List<Client> getAll(){
          return (List<Client>) clientCrudRepository.findAll();
      }
-
-     public Optional<Client> getClient(int id){
+    public Optional<Client> getClient(int id){
          return clientCrudRepository.findById(id);
     }
 
