@@ -1,0 +1,9 @@
+/* main = pantalla - header  == 100vh - 100 pixeles del header  -- VH significa viewport height (altura del dispositivo)  */
+.main{
+    /* background: yellowgreen; */
+    width: 100%;
+    height: calc(100vh - 200px); /*tome el 100 de la altura del dispositico y se resta 100 px (header) y 100 footer*/
+    display: flex; /*  las cajas se colocan una frente de la otra Si no se coloca se apilaria uan arriba y la otra abajo*/
+    justify-content: center; /* Alineacion horizontal*/
+    align-items: center;  /* alineacion vertical*/
+}

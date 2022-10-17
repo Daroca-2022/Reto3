@@ -1,8 +1,7 @@
 package com.usa.mintic.reto3.controller;
 
-
-import com.usa.mintic.reto3.model.Score;
-import com.usa.mintic.reto3.service.ScoreService;
+import com.usa.mintic.reto3.model.Category;
+import com.usa.mintic.reto3.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,39 +10,40 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/Score")
+@RequestMapping("/api/Category")
 @CrossOrigin(origins = "*", methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
-public class ScoreController {
+
+public class CategoryController {
 
     @Autowired
-    private ScoreService scoreService;
+    private CategoryService categoryService;
 
     @GetMapping("/all")
-    public List<Score> getAll(){
-        return scoreService.getAll();
+    public List<Category> getAll(){
+        return categoryService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Score> getById(@PathVariable("id") int id){
-        return scoreService.getScore(id);
+    public Optional<Category> getById(@PathVariable("id") int id){
+        return categoryService.getCategory(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Score save(@RequestBody Score s){
-        return scoreService.save(s);
+    public Category save(@RequestBody Category c){
+        return categoryService.save(c);
     }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Score update(@RequestBody Score c){
-        return scoreService.update(c);
+    public Category update(@RequestBody Category c){
+        return categoryService.update(c);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
-        return scoreService.delete(id);
+        return categoryService.delete(id);
     }
 
 }
