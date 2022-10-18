@@ -9,10 +9,6 @@ public class StatusAccount {
         this.cancelled=cancelled;
     }
 
-    public StatusAccount(Object completed, Object cancelled){
-        this.completed=Integer.parseInt(completed.toString());
-        this.completed=Integer.parseInt(cancelled.toString());
-    }
 
     public Integer getCompleted() {
         return completed;
