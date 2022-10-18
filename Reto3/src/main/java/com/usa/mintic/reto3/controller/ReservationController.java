@@ -3,6 +3,8 @@ package com.usa.mintic.reto3.controller;
 ;
 import com.usa.mintic.reto3.model.Category;
 import com.usa.mintic.reto3.model.Reservation;
+import com.usa.mintic.reto3.model.dto.StatusAccount;
+import com.usa.mintic.reto3.model.dto.TopClients;
 import com.usa.mintic.reto3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,5 +47,18 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
         return reservationService.delete(id);
+    }
+
+    @GetMapping("/report-dates/{dateA}/{dateB}")
+    public List<Reservation> getByDates(@PathVariable("dateA")String da,@PathVariable("dateB")String db ){
+        return reservationService.getReservationsByPeriod(da,db);
+    }
+    @GetMapping("/report-status")
+    public StatusAccount getByStatus(){
+        return reservationService.getReportByStatus();
+    }
+    @GetMapping("/report-clients")
+    public List<TopClients> getTopClients(){
+        return reservationService.getTopclients();
     }
 }
